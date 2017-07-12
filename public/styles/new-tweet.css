@@ -1,0 +1,42 @@
+body .container {
+  background-color: white;
+  padding-top: 140px;
+  padding-bottom: 20px;
+  margin-top: 6em;
+  margin-bottom: 4em;
+  width: 450px;
+}
+
+body .new-tweet {
+  background-color: #eeeeee;
+  border-radius: 5px;
+  margin-left: 2em;
+  margin-right: 2em;
+  padding: 0.5em;
+}
+
+
+body .counter {
+  float: right;
+  font-style: italic;
+}
+
+h2 {
+  width: 100%;
+}
+
+/*body ["text"] {*/
+  /*padding-left: 2em;*/
+  /*padding-right: 2em;*/
+/*}*/
+
+.negativeValue {
+  color: #FF0000;
+}
+
+textarea {
+  padding-left: 0.5em;
+  padding-right: 1em;
+  text-align: left;
+  width: 100%;
+}

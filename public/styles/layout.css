@@ -14,12 +14,20 @@ html {
  * Global layout stuff
  */
 
-body {
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+ body {
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   color: #244751;
   background-color: #eee;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+body .container {
+  background-color: white;
+  padding-top: 140px;
+  margin: auto;
+  width: 450px;
+}
