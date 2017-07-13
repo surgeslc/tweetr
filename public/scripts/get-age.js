@@ -1,8 +1,16 @@
 $(document).ready(function(){
 
    // jQuery methods go here...
-  //New tweet counter
-  var $counter = $('.new-tweet .counter');
+  //Age of old tweets
+
+
+  function getAge(timestamp) {
+
+    return Date.now() - timestamp;
+  }
+
+
+  /*var $age = $('.new-tweet .counter');
   const maxLength = 140;
   $('.new-tweet textarea').keyup(function() {
     var length = maxLength - $(this).val().length;
@@ -17,3 +25,4 @@ $(document).ready(function(){
     $counter.text(length);
   });
 });
+*/
