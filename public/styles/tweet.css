@@ -31,23 +31,24 @@ img {
 }
 
 /*Font Awesome class*/
-.fa {
+/*.fa {
   color: #34DDDD;
-}
+}*/
 
 .tweeterButtons {
+  color: #34DDDD;
   display: none;
   float: right;
 }
 
-.tweets {
+.tweet {
   border: 1px solid black;
   border-radius: 5px;
   margin-left: 2em;
   width: 386px;
 }
 
-.tweets:hover .tweeterButtons {
+.tweet:hover .tweeterButtons {
   display: block;
 }
 

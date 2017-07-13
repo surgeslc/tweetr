@@ -75,8 +75,8 @@ function createTweetElement(tweetData) {
         .append($('<abbr class="fa fa-flag" title="Flag">'))
         .append($('<abbr class="fa fa-retweet" title="Retweet">'))
         .append($('<abbr class="fa fa-heart" title="Like">'))
-      )
-    );
+    )
+  );
 }
 
 function renderTweets(tweets) {
