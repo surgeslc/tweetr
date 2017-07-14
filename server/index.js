@@ -45,12 +45,13 @@ var mongodb = MongoClient.connect(MONGODB_URI, (err, db) => {
   getTweets((err, tweets) => {
     if (err) throw err;
 
-  /*  console.log("Logging each tweet:");
+  console.log("Logging each tweet:");
     for (let tweet of tweets) {
       console.log(tweet);
-    } */
+    }
+    return tweets;
 
-    //db.close();
+    db.close();
   });
 
   // The `data-helpers` module provides an interface to the database of tweets.

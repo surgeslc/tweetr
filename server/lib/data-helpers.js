@@ -17,13 +17,15 @@ module.exports = function makeDataHelpers(db) {
 
     // Get all tweets in `db`, sorted by newest first
     getTweets: function(callback) {
-      db.collection('tweets').find().toArray(function stepTwo(queryErr, results) {
+      db.collection('tweets').find().toArray(function (queryErr, results) {
         if(queryErr) {
           console.log('Query Error', queryErr);
         } else {
           console.log('Query Results', results);
+          //return results;
         }
-        db.close();
+        //db.close();
+        callback(queryErr, results);
       });
     }
   };

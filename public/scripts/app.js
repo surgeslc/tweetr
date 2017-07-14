@@ -54,10 +54,6 @@
 
 function createTweetElement(tweetData) {
 
-/*  var $avatar = $('<img src="https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png" alt="User avatar">');
-  var $userName = "Bill Fields";
-  $tweet.append($avatar);
-*/
   return $('<article class="tweet">')
     .append($('<header>')
       .append($('<div class="user">')
@@ -70,6 +66,7 @@ function createTweetElement(tweetData) {
       .append($('<p>').text(tweetData.content.text))
     )
     .append($('<footer>')
+
       .append($('<span>').attr('data-livestamp', (tweetData.created_at / 1000)))
       .append($('<div class="tweeterButtons">')
         .append($('<abbr class="fa fa-flag" title="Flag">'))
@@ -81,7 +78,6 @@ function createTweetElement(tweetData) {
 
 function renderTweets(tweets) {
 
-//$('#tweets-container').append($tweetElements);
   tweets.forEach(function(tweet) {
     let $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet);
@@ -89,5 +85,16 @@ function renderTweets(tweets) {
 }
 
 $(document).ready(function() {
-  var $tweetElements = renderTweets(tweetData);
+
+  function loadTweets() {
+    $.ajax({
+      url: "/tweets",
+      success: function( result ) {
+        console.log(result);
+        renderTweets(tweetData);
+      }
+    });
+  }
+loadTweets();
+  //var $tweetElements = renderTweets(tweetData);
 });
