@@ -17,8 +17,6 @@ app.use(express.static("public"));
 //Code copied from mongo_example.js
 const {MongoClient} = require("mongodb");
 const MONGODB_URI = "mongodb://localhost:27017/tweeter";
-//Added to minimize changes to legacy code
-
 
 var mongodb = MongoClient.connect(MONGODB_URI, (err, db) => {
   if (err) {

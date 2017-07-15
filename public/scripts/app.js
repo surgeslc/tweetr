@@ -91,10 +91,33 @@ $(document).ready(function() {
       url: "/tweets",
       success: function( result ) {
         console.log(result);
-        renderTweets(tweetData);
+        $('#tweets-container').empty();
+        renderTweets(result);
       }
     });
   }
+  $("#tweet-form").on("submit", function (evt) {
+    evt.preventDefault();
+    var tweetInput = $(this).find('[name="text"]');
+    var tweetText = tweetInput.val();
+    if (tweetText === "" || tweetText.length > 140) {
+      $.flash("Your tweet has no text, or too much text!");
+      return;
+    }
+    var newTweet = $(this).serialize();
+    console.log(newTweet);
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: newTweet,
+      success: function( result ) {
+        console.log(result);
+        tweetInput.val('');
+        loadTweets();
+      }
+    })
+  })
+
 loadTweets();
   //var $tweetElements = renderTweets(tweetData);
 });
