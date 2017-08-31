@@ -84,7 +84,7 @@ function renderTweets(tweets) {
   });
 }
 
-$(document).ready(function() {
+$( document ).ready(function() {
 
   function loadTweets() {
     $.ajax({
